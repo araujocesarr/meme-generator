@@ -21,7 +21,3 @@ export default function Header() {
     </header>
   );
 }
-
-// bg-[linear-gradient(90deg,_#672280_1.18%,_#A626D3_100%)]
-
-//bg-gradient-to-r from-purple-dark from-[1.18%] to-purple-light

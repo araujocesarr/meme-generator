@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
-import memesData from "../assets/memesData.js";
 
 export default function Meme() {
   const [meme, setMeme] = useState({
@@ -9,14 +8,22 @@ export default function Meme() {
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
+  const [allMemeImages, setAllMemeImages] = useState([]);
+
+  useEffect(() => {
+    async function getMemes() {
+      const res = await fetch("https://api.imgflip.com/get_memes");
+      const data = await res.json();
+      setAllMemeImages(data.data.memes);
+    }
+    getMemes();
+  }, []);
 
   function getMemeImage(event) {
     event.preventDefault();
     console.log(meme);
-    const memesArray = allMemeImages.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
+    const randomNumber = Math.floor(Math.random() * allMemeImages.length);
+    const url = allMemeImages[randomNumber].url;
     setMeme((prevMeme) => ({
       ...prevMeme,
       randomImage: url,
@@ -33,7 +40,7 @@ export default function Meme() {
   }
 
   return (
-    <main className="font-Karla p-9">
+    <main className="font-Karla p-9 container mx-auto md:max-w-2xl">
       <form
         className="
       grid grid-rows-2 grid-cols-2 gap-4 gap-y-4"
@@ -70,7 +77,7 @@ export default function Meme() {
         <img
           src={meme.randomImage}
           alt=""
-          className="max-w-full mt-5 rounded-lg"
+          className="max-w-full mt-5 rounded-lg mx-auto"
         />
 
         <h2
@@ -80,7 +87,8 @@ export default function Meme() {
         font-impact text-[2em]
         uppercase text-white
         tracking-[1px]
-        drop-shadow-text-shadow"
+        drop-shadow-text-shadow
+        max-sm:text-[1em]"
         >
           {meme.topText}
         </h2>
@@ -92,7 +100,8 @@ export default function Meme() {
         font-impact text-[2em]
         uppercase text-white
         tracking-[1px]
-        drop-shadow-text-shadow"
+        drop-shadow-text-shadow
+        max-sm:text-[1em]"
         >
           {meme.bottomText}
         </h2>

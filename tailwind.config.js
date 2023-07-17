@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         Karla: ["Karla", "Arial", "sans-serif"],
+        impact: ["impact", "sans-serif"],
       },
     },
   },

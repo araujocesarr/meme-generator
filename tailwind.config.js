@@ -3,6 +3,19 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      dropShadow: {
+        "text-shadow": [
+          "2px 2px 0 #000",
+          "-2px -2px 0 #000",
+          "2px -2px 0 #000",
+          "-2px 2px 0 #000",
+          "0 2px 0 #000",
+          "2px 0 0 #000",
+          "0 -2px 0 #000",
+          "-2px 0 0 #000",
+          "2px 2px 5px #000",
+        ],
+      },
       colors: {
         "purple-dark": "#672280",
         "purple-light": "#A626D3",

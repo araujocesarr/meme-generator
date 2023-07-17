@@ -79,7 +79,8 @@ export default function Meme() {
         my-4 mx-0 py-0 px-1 top-0
         font-impact text-[2em]
         uppercase text-white
-        tracking-[1px]"
+        tracking-[1px]
+        drop-shadow-text-shadow"
         >
           {meme.topText}
         </h2>
@@ -90,7 +91,8 @@ export default function Meme() {
         my-4 mx-0 py-0 px-1 bottom-0
         font-impact text-[2em]
         uppercase text-white
-        tracking-[1px]"
+        tracking-[1px]
+        drop-shadow-text-shadow"
         >
           {meme.bottomText}
         </h2>

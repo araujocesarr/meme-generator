@@ -10,7 +10,7 @@ export default function Header() {
     flex items-center"
     >
       <img
-        src="public/assets/Troll_face.png"
+        src="public/assets/Troll-face.png"
         alt="logo"
         className="h-full mr-[7px]"
       />

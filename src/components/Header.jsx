@@ -9,7 +9,11 @@ export default function Header() {
     font-Karla text-white
     flex items-center"
     >
-      <img src="assets/Troll_face.png" alt="logo" className="h-full mr-[7px]" />
+      <img
+        src="public/assets/Troll_face.png"
+        alt="logo"
+        className="h-full mr-[7px]"
+      />
       <h2 className="text-[1.25rem] font-bold font tracking-[-0.1em] mr-auto">
         Meme Generator
       </h2>
